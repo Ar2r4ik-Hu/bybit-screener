@@ -84,7 +84,7 @@ def main():
             filtered = data
             if MODE == "top20": filtered = {k:v for k,v in data.items() if k in top20}
             elif MODE == "top50": filtered = {k:v for k,v in data.items() if k in top50}
-            elif MODE == "others": filtered = {k:v for k,v in data.items() if k not in top20}
+            elif MODE == "others": filtered = {k:v for k,v in data.items() if k not in top50}
             if filtered:
                 delta = sum(filtered.values()) - sum(v for k,v in prev.items() if k in filtered)
                 if abs(delta) >= 50_000 or not prev:
